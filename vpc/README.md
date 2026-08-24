@@ -31,7 +31,7 @@ module "vpc" {
 
 `database_subnets`, `elasticache_subnets`, and `redshift_subnets` are optional — omit them (or leave as `[]`) to skip creating that tier entirely.
 
-## Design notes
+## Design Notes
 
 - `azs`, `private_subnets`, and `public_subnets` have **no default** — a caller who forgets to set them gets a hard error at `plan` time instead of silently deploying into the wrong region/topology.
 - `private_subnets`, `public_subnets`, `database_subnets`, `elasticache_subnets`, and `redshift_subnets` are each validated to have the same number of entries as `azs` (or be empty, for the optional tiers).
